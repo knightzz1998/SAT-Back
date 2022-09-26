@@ -57,6 +57,7 @@ class RWEncoding(PositionEncoding):
 
 
 def normalize_adj(edge_index, edge_weight=None, num_nodes=None):
+
     edge_index, edge_weight = utils.remove_self_loops(edge_index, edge_weight)
     if edge_weight is None:
         edge_weight = torch.ones(edge_index.size(1),
